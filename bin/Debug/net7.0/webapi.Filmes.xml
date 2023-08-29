@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.Filmes</name>
+    </assembly>
+    <members>
+        <member name="M:webapi.Filmes.Properties.Controllers.FilmeController.Get">
+            <summary>
+            EndPoint que lista todos os filmes existentes
+            </summary>
+            <returns>retorna uma lista com todos os filmes e o status code</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.FilmeController.GetbyID(System.Int32)">
+            <summary>
+            EndPoint que consulta um filme pelo seu id
+            </summary>
+            <param name="id">filme a ser buscado</param>
+            <returns>status code referente a operação e o objeto resultante da consulta</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.FilmeController.Create(webapi.Filmes.Properties.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que cria um objeto filme
+            </summary>
+            <param name="novoFilme">Filme que será criado</param>
+            <returns>retorna um status code com o resultado da operação</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.FilmeController.EditFilmeBody(webapi.Filmes.Properties.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que atualiza o filme por meio de um json
+            </summary>
+            <param name="filme">filme que sera alterado</param>
+            <returns>Status code de acordo com o resultado da operação</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.FilmeController.Delete(System.Int32)">
+            <summary>
+            EndPoint que deleta um filme da tabela filmes
+            </summary>
+            <param name="id">id do filme a ser deletado</param>
+            <returns>status code</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.FilmeController.EditFilmeById(System.Int32,webapi.Filmes.Properties.Domains.FilmeDomain)">
+            <summary>
+            EndPoint que edita o filme pelo seu id
+            </summary>
+            <param name="id">Id do filme que será atualizado</param>
+            <param name="filme">Objeto que sera alterado</param>
+            <returns>Status code de acordo com o resultado da operação</returns>
+        </member>
+        <member name="P:webapi.Filmes.Properties.Controllers.GeneroController._generoRepository">
+            <summary>
+            Objeto _GeneroRepository que ira receber todos os metodosdefinidos na interface
+            </summary>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.#ctor">
+            <summary>
+            Instancia o objeto _generoRepository para referenciar os metodos no repositorio
+            </summary>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.Get">
+            <summary>
+            EndPoint que aciona o metodo listar todos no repositorio e retorna a resposta para o usuario(front-end)
+            </summary>
+            <returns>retorna um status code de acordo com o resultado da operação</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.GetbyID(System.Int32)">
+            <summary>
+            EndPoint que consulta um genero pelo seu id
+            </summary>
+            <param name="id">genero a ser buscado</param>
+            <returns>status code referente a operação e o objeto resultante da consulta</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.Post(webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            EndPoint que aciona o metodo de cadastro
+            </summary>
+            <param name="novoGenero">Objeto recebido na requisição</param>
+            <returns>status code 201 (created)</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.EditGeneroBody(webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            EndPoint que atualiza o genero por meio de um json
+            </summary>
+            <param name="genero">genero que sera alterado</param>
+            <returns>Status code de acordo com o resultado da operação</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.EditGeneroById(System.Int32,webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            EndPoint que edita o genero pelo seu id
+            </summary>
+            <param name="id">Id do genero que será atualizado</param>
+            <param name="genero">Objeto que sera alterado</param>
+            <returns>Status code de acordo com o resultado da operação</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Controllers.GeneroController.Delete(System.Int32)">
+            <summary>
+            EndPoint que deleta um genero existente
+            </summary>
+            <param name="id"> id do genero a ser deletado</param>
+            <returns>status code referente a operação do metodo</returns>
+        </member>
+        <member name="T:webapi.Filmes.Properties.Domains.GeneroDomain">
+            <summary>
+            Classe que representa a entidade (Tabela) Genero
+            </summary>
+        </member>
+        <member name="T:webapi.Filmes.Properties.Interfaces.IFilmeRepository">
+            <summary>
+            Interface responsável pelo repositório FilmeRepository
+            Definir os métodos que serão implementados pelo FilmeRepository
+            </summary>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IFilmeRepository.Cadastrar(webapi.Filmes.Properties.Domains.FilmeDomain)">
+            <summary>
+            Cadastrar um novo filme
+            </summary>
+            <param name="novoFilme">Objeto que será cadastrado</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IFilmeRepository.ListarTodos">
+            <summary>
+            Listar todos os objetos cadastrados
+            </summary>
+            <returns>Lista com os objetos</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IFilmeRepository.AtualizarIdCorpo(webapi.Filmes.Properties.Domains.FilmeDomain)">
+            <summary>
+            Atualizar objeto existente passando o seu id pelo corpo da requisição
+            </summary>
+            <param name="filme">Objeto atualizado (novas informações)</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IFilmeRepository.AtualizarIdUrl(System.Int32,webapi.Filmes.Properties.Domains.FilmeDomain)">
+            <summary>
+            Atualizar objeto existente passando o seu id pela url 
+            </summary>
+            <param name="id">Id do objeto que será atualizado</param>
+            <param name="filme))">Objeto atualizado(novas informações)</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IFilmeRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar um objeto
+            </summary>
+            <param name="id">Id do objeto que será deletado</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IFilmeRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um objeto através do seu id
+            </summary>
+            <param name="id">Id do objeto a ser buscado</param>
+            <returns>Objeto buscado</returns>
+        </member>
+        <member name="T:webapi.Filmes.Properties.Interfaces.IGeneroRepository">
+            <summary>
+            Interface responsável pelo repositório GeneroRepository
+            Definir os métodos que serão implementados pelo GeneroRepository
+            </summary>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IGeneroRepository.Cadastrar(webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um gênero
+            </summary>
+            <param name="novoGenero"> Objeto que será cadastrado</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IGeneroRepository.ListarTodos">
+            <summary>
+            Lista todos os generos cadastrados
+            </summary>
+            <returns>Lista todos como objetos</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IGeneroRepository.AtualizarIdCorpo(webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            Atualiza o objeto existente passando seu id pelo corpo da requisição
+            </summary>
+            <param name="genero">Objeto atualizado (novas informações)</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IGeneroRepository.AtualizarIdUrl(System.Int32,webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            Atualiza o objeto existente passando seu id pela url
+            </summary>
+            <param name="id">Id do objeto que sera atualizado</param>
+            <param name="genero">Objeto atualizado (novas informações)</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IGeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar um objeto
+            </summary>
+            <param name="id">Id do objeto que será deletado</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IGeneroRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um objeto pelo id
+            </summary>
+            <param name="id"> Id do objeto que sera buscado</param>
+            <returns>Objeto que será encontrado</returns>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Repositories.GeneroRepository.Cadastrar(webapi.Filmes.Properties.Domains.GeneroDomain)">
+            <summary>
+            Cadastrar um novo genero
+            </summary>
+            <param name="novoGenero">Objeto com as informações que serão cadastrados</param>
+        </member>
+        <member name="M:webapi.Filmes.Properties.Repositories.GeneroRepository.Deletar(System.Int32)">
+            <summary>
+            Deletar um genero existente
+            </summary>
+            <param name="id">id do genero a ser deletado</param>
+        </member>
+    </members>
+</doc>
