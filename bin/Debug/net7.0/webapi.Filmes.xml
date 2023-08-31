@@ -191,6 +191,14 @@
             <param name="id"> Id do objeto que sera buscado</param>
             <returns>Objeto que será encontrado</returns>
         </member>
+        <member name="M:webapi.Filmes.Properties.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Método de autenticação de usuário
+            </summary>
+            <param name="email"> email do usuario </param>
+            <param name="password"> senha do usuario </param>
+            <returns>retorna um objeto do tipo usuario</returns>s
+        </member>
         <member name="M:webapi.Filmes.Properties.Repositories.GeneroRepository.Cadastrar(webapi.Filmes.Properties.Domains.GeneroDomain)">
             <summary>
             Cadastrar um novo genero
