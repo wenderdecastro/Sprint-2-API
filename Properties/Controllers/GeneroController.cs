@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi.Filmes.Properties.Domains;
 using webapi.Filmes.Properties.Interfaces;
@@ -35,6 +36,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// </summary>
         /// <returns>retorna um status code de acordo com o resultado da operação</returns>
         [HttpGet]
+        [Authorize(Roles = "True,False")]
         public IActionResult Get()
         {
 
@@ -62,6 +64,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="id">genero a ser buscado</param>
         /// <returns>status code referente a operação e o objeto resultante da consulta</returns>
         [HttpGet("{id}")]
+        [Authorize(Roles = "True,False")]
         public IActionResult GetbyID(int id)
         {
             try
@@ -87,6 +90,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="novoGenero">Objeto recebido na requisição</param>
         /// <returns>status code 201 (created)</returns>
         [HttpPost]
+        [Authorize(Roles = "True")]
         public IActionResult Post(GeneroDomain novoGenero)
         {
 
@@ -111,6 +115,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="genero">genero que sera alterado</param>
         /// <returns>Status code de acordo com o resultado da operação</returns>
         [HttpPut]
+        [Authorize(Roles = "True")]
         public IActionResult EditGeneroBody(GeneroDomain genero)
         {
 
@@ -148,6 +153,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="genero">Objeto que sera alterado</param>
         /// <returns>Status code de acordo com o resultado da operação</returns>
         [HttpPatch("{id}")]
+        [Authorize(Roles = "True")]
         public IActionResult EditGeneroById(int id, GeneroDomain genero)
         {
             try
@@ -160,7 +166,7 @@ namespace webapi.Filmes.Properties.Controllers
                     {
                         _generoRepository.AtualizarIdUrl(id, genero);
                         return Ok();
-                    }   
+                    }
                     catch (Exception Erro)
                     {
                         //retorna um status code de erro
@@ -182,6 +188,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="id"> id do genero a ser deletado</param>
         /// <returns>status code referente a operação do metodo</returns>
         [HttpDelete]
+        [Authorize(Roles = "True")]
         public IActionResult Delete(int id)
         {
             try

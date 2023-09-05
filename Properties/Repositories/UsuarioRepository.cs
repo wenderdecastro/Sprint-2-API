@@ -11,7 +11,8 @@ namespace webapi.Filmes.Properties.Repositories
 
         public UsuarioDomain Login(string email, string senha)
         {
-            string queryUsuario = $"SELECT Email, Senha, Permissao FROM Usuario WHERE Email = @Email AND Senha = @Senha";
+
+            string queryUsuario = $"SELECT IdUsuario, Email, Permissao FROM Usuario WHERE Email = @Email AND Senha = @Senha";
 
             using (SqlConnection con = new SqlConnection(StringConexao))
             {
@@ -20,25 +21,28 @@ namespace webapi.Filmes.Properties.Repositories
 
                 using (SqlCommand cmd = new SqlCommand(queryUsuario, con))
                 {
+
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Senha", senha);
-
 
                     using (SqlDataReader rdr = cmd.ExecuteReader())
                     {
 
                         if (rdr.Read())
                         {
+
                             UsuarioDomain usuario = new UsuarioDomain()
                             {
+                                IdUsuario = Convert.ToInt32(rdr["IdUsuario"]),
                                 Email = rdr["Email"].ToString(),
-                                Senha = rdr["Senha"].ToString(),
+                                //Senha = rdr["Senha"].ToString(),
                                 Permissao = rdr.GetBoolean(2)
                             };
 
                             return usuario;
 
                         }
+
                         return null;
 
                     }

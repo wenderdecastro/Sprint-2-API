@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using webapi.Filmes.Properties.Domains;
 using webapi.Filmes.Properties.Interfaces;
 using webapi.Filmes.Properties.Repositories;
@@ -22,6 +24,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// </summary>
         /// <returns>retorna uma lista com todos os filmes e o status code</returns>
         [HttpGet]
+        [Authorize(Roles = "True,False")]
         public IActionResult Get()
         {
 
@@ -47,6 +50,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="id">filme a ser buscado</param>
         /// <returns>status code referente a operação e o objeto resultante da consulta</returns>
         [HttpGet("{id}")]
+        [Authorize(Roles = "True,False")]
         public IActionResult GetbyID(int id)
         {
             try
@@ -73,6 +77,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="novoFilme">Filme que será criado</param>
         /// <returns>retorna um status code com o resultado da operação</returns>
         [HttpPost]
+        [Authorize(Roles = "True")]
         public IActionResult Create(FilmeDomain novoFilme)
         {
             try
@@ -94,6 +99,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="filme">filme que sera alterado</param>
         /// <returns>Status code de acordo com o resultado da operação</returns>
         [HttpPut]
+        [Authorize(Roles = "True")]
         public IActionResult EditFilmeBody(FilmeDomain filme)
         {
             try
@@ -129,6 +135,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="id">id do filme a ser deletado</param>
         /// <returns>status code</returns>
         [HttpDelete]
+        [Authorize(Roles = "True")]
         public IActionResult Delete(int id)
         {
             try
@@ -152,6 +159,7 @@ namespace webapi.Filmes.Properties.Controllers
         /// <param name="filme">Objeto que sera alterado</param>
         /// <returns>Status code de acordo com o resultado da operação</returns>
         [HttpPatch("{id}")]
+        [Authorize(Roles = "True")]
         public IActionResult EditFilmeById(int id, FilmeDomain filme)
         {
             try

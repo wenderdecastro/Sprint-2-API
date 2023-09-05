@@ -38,3 +38,11 @@ C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Swashbuckle.AspN
 C:\Users\57267874800\Desktop\api\webapi.Filmes\obj\Debug\net7.0\webapi.Filmes.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\webapi.Filmes.xml
 C:\Users\57267874800\Desktop\api\webapi.Filmes\obj\Debug\net7.0\webapi.Filmes.xml
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\57267874800\Desktop\api\webapi.Filmes\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
